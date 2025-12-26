@@ -1,22 +1,22 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
+import path from 'path'
+import { defineConfig, loadEnv } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '.', '');
+  const env = loadEnv(mode, '.', '')
 
   return {
-    base: '/test-cam/', // ✅ BẮT BUỘC cho GitHub Pages
-
-    server: {
-      port: 3000,
-      host: '0.0.0.0',
-    },
+    // 🔴 BẮT BUỘC cho GitHub Pages
+    base: '/test-cam/',
 
     plugins: [react()],
 
+    server: {
+      port: 3000,
+      host: true,
+    },
+
     define: {
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
 
@@ -25,5 +25,5 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
-  };
-});
+  }
+})
