@@ -1,0 +1,9 @@
+{
+  "name": "Copy of Camera - Lâm Viên - Đà Lạt",
+  "description": "Hệ thống quản lý Camera an ninh thông minh.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
